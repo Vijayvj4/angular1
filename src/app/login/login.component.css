@@ -1,0 +1,41 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(src\assets\images\ocean.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    
+}
+fieldset {
+    
+    padding: 20px;
+    padding-left: 40px;
+    align-content: center;
+    background:rgb(249, 248, 250);
+    background: transparent;
+    color:black;
+}
+h2 {
+    text-shadow: 2px 2px 2px #CCCCCC;
+    color:black(255, 0, 0);
+    font-size: 40px;
+    font-style:inherit;
+    font-variant: small-caps;
+}
+.field-icon {
+    float: right;
+    left: -15px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+  }
+  ul{
+    background-color:rgb(230, 223, 230);
+}
+a{
+    color: black;
+} 

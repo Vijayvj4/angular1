@@ -1,0 +1,80 @@
+
+<div class="container-fluid">
+  
+    
+    <ul class="nav nav-pills" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link bi bi-house-door-fill " data-toggle="pill" routerLink="/login">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link bi bi-pencil-square" data-toggle="pill" routerLink="/registration">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active bi bi-journal-text" data-toggle="pill" routerLink="/details">Details</a>
+      </li>
+    </ul>
+<div style="align-content: flex-end;">
+    <a style="cursor: pointer" href="http://localhost:9191/users/export/excel">
+      <button class="btn btn-primary bi bi-download" style="float: right;"> </button>
+    </a>
+  </div>
+ 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+             <div id="custom-search-input">
+                              <div class="input-group col-md-11" style="text-align: center">
+                                  <input type="text" class="search-query form-control"  placeholder="Search With Username"  name="username" [(ngModel)]="username"/>
+                                  <span class="input-group-btn">
+                                      <button class="btn btn-success" type="search" (click)="findUserByUsername()">
+                                        <i class="bi bi-search"></i> </button>
+                                  </span>
+                              </div>
+                          </div>
+              </div>
+                        <div class="col-sm-3"></div>
+  </div>
+  </div>
+  <br>
+<div class="container">
+<div class="row justify-content-center">
+  <div class="row col-md-6 col-md-offset-2 ">
+  <table class="table table-bordered table-hover" id="excel-table">
+  <thead class="thead-dark">
+      <tr>
+          <th scope="col" (click)="sort('id')">Id&nbsp;<i class="bi bi-sort-up "></i></th>
+          <th scope="col">Email</th>
+          <th scope="col">Username</th>
+          <th scope="col">Password</th>
+          <th scope="col">Delete</th>
+          <th scope="col">Edit</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let user of users | orderBy: key: reverse | paginate: {itemsPerPage:5,currentPage:p};">
+          <td>{{user.id}}</td>
+          <td>{{user.emailid}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.password}}</td>
+          <td class="text-center"><button class="btn btn-danger" (click)="deleteUser(user.id);showSuccess()"><i class="bi bi-trash"></i></button></td>
+          <td class="text-center"><button class="btn btn-primary" (click)="updateUser(user.id)"><i class="bi bi-pencil" ></i></button></td>
+
+
+
+        </tr>
+  </tbody>
+  </table>
+  <div class="justify-content-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+ 

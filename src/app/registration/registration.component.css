@@ -1,0 +1,30 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(25deg, #78458a 50%, #d0bcd6 50%);
+} 
+fieldset {
+    border: thin solid #ccc; 
+    border-radius: 40px;
+    padding: 20px;
+    padding-left: 40px;
+    align-content: center;
+    background:rgb(249, 248, 250);
+}
+h2 {
+    text-shadow: 2px 2px 2px #CCCCCC;
+    color:rgb(255, 0, 0);
+    font-size: 40px;
+}
+.field-icon {
+    float: right;
+    left: -15px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+  }
+  ul{
+    background-color:rgb(230, 223, 230);
+}
